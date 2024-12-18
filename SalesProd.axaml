@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="shubenok1212.SalesProd"
+        Title="SalesProd">
+  <Grid
+	  RowDefinitions="100,500,*">
+	  <StackPanel
+		  Grid.Row="0">
+		  <Button
+			  Click="nazad_Click"
+			  Content="Назад">
+			  </Button>
+		  </StackPanel>
+	  <StackPanel
+		  Grid.Row="1">
+		  <ListBox
+			  Name="salesListBox">
+				<ListBox.ItemTemplate>
+					<DataTemplate
+						x:CompileBindings="False">
+						<ScrollViewer>
+						<Grid
+							Height="200">
+							<StackPanel
+								Orientation="Vertical">
+								<StackPanel Orientation="Horizontal">
+									<TextBlock
+										Text="Наименование продукта">
+										</TextBlock>
+								<TextBlock
+									Text="{Binding IdProdNavigation.Name}">
+									</TextBlock>
+									</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock
+										Text="Проданное колличество: ">
+									</TextBlock>
+									<TextBlock
+										Text="{Binding Amount}">
+									</TextBlock>
+								</StackPanel>
+								<StackPanel 
+									Orientation="Horizontal">
+								<TextBlock
+									Text="Дата и время продажи: ">
+								</TextBlock>
+									<TextBlock
+										Text="{Binding Date}">
+										</TextBlock>
+									<TextBlock
+										Text=" ">
+										</TextBlock>
+									<TextBlock
+										Text="{Binding Time}">
+										</TextBlock>
+									</StackPanel>
+								</StackPanel>
+							</Grid>
+							</ScrollViewer>
+						</DataTemplate>
+		  </ListBox.ItemTemplate>
+			  </ListBox>
+	  </StackPanel>
+	  
+	  
+	  </Grid>
+</Window>
